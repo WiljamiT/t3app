@@ -6,6 +6,7 @@
 - NextAuth
 - Prisma
 - Tailwind
+  -DaisyUI
 - Trpc
 
 # Oauth Client ID
