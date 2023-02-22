@@ -1,6 +1,7 @@
 # T3 App
 
 [App](https://t3app-wiljamit.vercel.app/)
+Vaatii kirjautumisen
 
 # Stack
 
