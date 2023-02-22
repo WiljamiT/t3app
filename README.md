@@ -2,6 +2,8 @@
 
 [App](https://t3app-wiljamit.vercel.app/)
 Vaatii kirjautumisen
+![Syntax](After.png)
+![Markdown](Before.png)
 
 # Stack
 
