@@ -70,7 +70,7 @@ const Content: React.FC = () => {
       void refetchNotes();
     },
   });
-  console.log(topics)
+
   return (
     <>
     <div className="mx-5 mt-5 grid grid-cols-4 gap-2">
