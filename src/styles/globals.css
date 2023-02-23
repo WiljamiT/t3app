@@ -11,8 +11,45 @@ main {
 
 .commit {
     color: cyan;
+    background: #555555;
+    border-radius: 20px;
+    padding: 2px 10px 2px 10px;
+    margin: 0 2px 0 2px;
+}
+
+.date {
+    color: cyan;
 }
 
 .name {
     color: cyan;
+    background: #555555;
+    border-radius: 20px;
+    padding: 2px 10px 2px 10px;
+    margin: 0 2px 0 2px;
 }
+
+
+@media screen and (max-width: 450px) {
+    .navbar {
+        height: 12rem;
+        margin: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .md-container {
+        border: 1px solid red;
+        display: flex;
+        flex-direction: column;
+    }
+    main {
+      background-color: blue;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }

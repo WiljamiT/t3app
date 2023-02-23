@@ -4,6 +4,25 @@ import axios from "axios";
 export const Footer = () => {
     const [commits, setCommits] = useState<CommitData[]>([]);
 
+    interface CommitData {
+  sha: string;
+  commit: {
+    message: string;
+    
+    author: {
+      name: string;
+      email: string;
+      date: string;
+      html_url: string;
+    },
+    committer: {
+        name: string;
+        date: Date;
+    };
+  };
+  html_url: string;
+}
+
 
 
     useEffect(() => {
@@ -21,18 +40,19 @@ export const Footer = () => {
     return (
         <footer className="relative bg-primary pt-8 pb-6">
         <div className="container mx-auto px-4">
-        <div>
+        <div className="text-sm text-primary-content font-semibold">
             
             <ul>
                 {commits.slice(0, 1).map((commit) => (
                 <li key={commit.sha}>
                     <p>
-                        Site updated and built with commit: <a className="commit" href={commit.html_url}>{commit.sha.slice(0, 7)}</a> at: {new Intl.DateTimeFormat("en-GB", {
+                        Site updated and built with commit: <a className="commit" href={commit.html_url}>{commit.sha.slice(0, 7)}</a> at: <i className="date">{new Intl.DateTimeFormat("en-GB", {
                             timeZone: "Europe/Helsinki",
                             dateStyle: "medium",
                             timeStyle: "medium",
-                        }).format(new Date(commit.commit.committer.date))}
-                        <p>by: <a href={commit.author.html_url} className="name">{commit.commit.committer.name}</a> </p>
+                        }).format(new Date(commit.commit.committer.date))}</i>
+                        {" "} by: <a href={commit.commit.author.html_url} className="name">{commit.commit.committer.name}</a> 
+                        
                         </p>
                 </li>
                 ))}
