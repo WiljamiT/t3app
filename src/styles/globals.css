@@ -41,12 +41,10 @@ main {
     }
 
     .md-container {
-        border: 1px solid red;
         display: flex;
         flex-direction: column;
     }
     main {
-      background-color: blue;
       display: flex;
       flex-direction: column;
       align-items: center;
