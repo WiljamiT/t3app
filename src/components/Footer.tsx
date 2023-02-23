@@ -28,7 +28,7 @@ export const Footer = () => {
                 <li key={commit.sha}>
                     <p>
                         Site updated and built with commit: <a className="commit" href={commit.html_url}>{commit.sha.slice(0, 7)}</a> at: {new Intl.DateTimeFormat("en-GB", {
-                            timeZone: "Europe/London",
+                            timeZone: "Europe/Helsinki",
                             dateStyle: "medium",
                             timeStyle: "medium",
                         }).format(new Date(commit.commit.committer.date))}
