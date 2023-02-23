@@ -6,9 +6,10 @@ export const Footer = () => {
 
     interface CommitData {
   sha: string;
+  html_url: string;
   commit: {
     message: string;
-    
+    html_url: string;
     author: {
       name: string;
       email: string;
@@ -18,9 +19,12 @@ export const Footer = () => {
     committer: {
         name: string;
         date: Date;
+        html_url: string;
     };
   };
-  html_url: string;
+  author: {
+    html_url: string;
+  }
 }
 
 
@@ -45,13 +49,12 @@ export const Footer = () => {
             <ul>
                 {commits.slice(0, 1).map((commit) => (
                 <li key={commit.sha}>
-                    <p>
-                        Site updated and built with commit: <a className="commit" href={commit.html_url}>{commit.sha.slice(0, 7)}</a> at: <i className="date">{new Intl.DateTimeFormat("en-GB", {
+                    <p>Site updated and built with commit: <a className="commit" href={commit.html_url}>{commit.sha.slice(0, 7)}</a> at: <i className="date">{new Intl.DateTimeFormat("en-GB", {
                             timeZone: "Europe/Helsinki",
                             dateStyle: "medium",
                             timeStyle: "medium",
                         }).format(new Date(commit.commit.committer.date))}</i>
-                        {" "} by: <a href={commit.commit.author.html_url} className="name">{commit.commit.committer.name}</a> 
+                        {" "} by: <a href={commit.author.html_url} className="name">{commit.commit.committer.name}</a>
                         
                         </p>
                 </li>
